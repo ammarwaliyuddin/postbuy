@@ -4,6 +4,11 @@ from flask import Flask, jsonify, request, make_response
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
+
+@app.route("/")
+def home_view():
+        return "<h1>Welcome to Geeks for Geeks</h1>"
+        
 @app.route('/karyawan', methods=['GET','POST'])
 def karyawan():
     if request.method == 'POST':
